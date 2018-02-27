@@ -124,9 +124,12 @@ def main():
                     for square in squares_list:
                         if square.rect.collidepoint(x, y):
                             square.viewable_trigger = True
-                elif x > 650 and x < 755 and y > 650 and y < 700:
+                elif 650 < x < 755 and 650 < y < 700:
                     pygame.quit()
                     sys.exit()
+                elif 650 < x < 755 and 580 < y < 630:
+                    pygame.quit()
+                    return
 
         for square_object in squares_list:
             if not square_object.match:
@@ -189,6 +192,12 @@ def main():
         else:
             print("not font")
 
+        pygame.draw.rect(windowSurface, (0, 220, 0), (655, 580, 100, 50))
+        font3 = pygame.font.Font(None, 35)
+        text3 = font3.render("Reset", 0, (255, 255, 255))
+        textpos3 = text3.get_rect(x=675, y=595)
+        windowSurface.blit(text3, textpos3)
+
         pygame.draw.rect(windowSurface, (255, 0, 0), (655, 650, 100, 50))
         font2 = pygame.font.Font(None, 35)
         text2 = font2.render("Exit", 0, (255, 255, 255))
@@ -200,4 +209,5 @@ def main():
         pygame.display.update()
 
 
-main()
+while True:
+    main()
