@@ -27,18 +27,7 @@ class Grid():
             self.color_name_list.append(
                 tuple((random.randrange(0, 255, 16), random.randrange(0, 255, 16), random.randrange(0, 255, 16))))
 
-    def draw_lines(self, windowSurface,click):
-        # if pygame.font:
-        #     font = pygame.font.Font(None, 50)
-        #     text = font.render("Clicked", 1, (255, 255, 255))
-        #     textpos = text.get_rect(x=645, y=120)
-        #     text1 = font.render(str(click), 1, (255, 255, 255))
-        #     textpos1 = text1.get_rect(x=695, y=230)
-        #     windowSurface.blit(text, textpos)
-        #     windowSurface.blit(text1, textpos1)
-        # else:
-        #     print("not font")
-
+    def draw_lines(self, windowSurface):
         for x in range(0, 700, self.square_width):
             pygame.draw.line(windowSurface, self.WHITE, (x, 0), (x, self.screenheight), 3)
         for y in range(0, self.screenheight, self.square_height):

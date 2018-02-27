@@ -184,6 +184,6 @@ while True:
     else:
         print("not font")
 
-    grid.draw_lines(windowSurface, click)
+    grid.draw_lines(windowSurface)
     clock.tick(FPS)
     pygame.display.update()
