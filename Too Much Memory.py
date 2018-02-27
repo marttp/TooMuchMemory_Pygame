@@ -3,6 +3,7 @@ from pygame.locals import *
 
 clicked = 0
 click = 0
+dual = 0
 
 
 class Square():
@@ -87,17 +88,35 @@ while True:
             else:
                 count = 0
 
-            if pygame.font:
-                font = pygame.font.Font(None, 80)
-                text1 = font.render(str(click), 0, (0, 0, 0))
-                textpos1 = text1.get_rect(x=655, y=230)
-                windowSurface.blit(text1, textpos1)
+            if click < 10:
+                if pygame.font:
+                    font = pygame.font.Font(None, 80)
+                    text1 = font.render(str(click), 0, (0, 0, 0))
+                    textpos1 = text1.get_rect(x=695, y=230)
+                    windowSurface.blit(text1, textpos1)
+                else:
+                    print("not font")
+            elif click < 100:
+                if pygame.font:
+                    font = pygame.font.Font(None, 80)
+                    text1 = font.render(str(click), 0, (0, 0, 0))
+                    textpos1 = text1.get_rect(x=675, y=230)
+                    windowSurface.blit(text1, textpos1)
+                else:
+                    print("not font")
             else:
-                print("not font")
+                if pygame.font:
+                    font = pygame.font.Font(None, 80)
+                    text1 = font.render(str(click), 0, (0, 0, 0))
+                    textpos1 = text1.get_rect(x=655, y=230)
+                    windowSurface.blit(text1, textpos1)
+                else:
+                    print("not font")
 
             clicked += 1
             if clicked % 3 == 0:
                 click += 1
+
             print(click)
 
             for square in squares_list:
@@ -143,10 +162,25 @@ while True:
         text = font.render("Clicked", 0, (255, 255, 255))
         textpos = text.get_rect(x=645, y=120)
         windowSurface.blit(text, textpos)
-        font1 = pygame.font.Font(None, 80)
-        text1 = font1.render(str(click), 0, (255, 255, 255))
-        textpos1 = text1.get_rect(x=655, y=230)
-        windowSurface.blit(text1, textpos1)
+
+        if click < 10:
+            if pygame.font:
+                font = pygame.font.Font(None, 80)
+                text1 = font.render(str(click), 0, (255, 255, 255))
+                textpos1 = text1.get_rect(x=695, y=230)
+                windowSurface.blit(text1, textpos1)
+        elif click < 100:
+            if pygame.font:
+                font = pygame.font.Font(None, 80)
+                text1 = font.render(str(click), 0, (255, 255, 255))
+                textpos1 = text1.get_rect(x=675, y=230)
+                windowSurface.blit(text1, textpos1)
+        else:
+            if pygame.font:
+                font = pygame.font.Font(None, 80)
+                text1 = font.render(str(click), 0, (255, 255, 255))
+                textpos1 = text1.get_rect(x=655, y=230)
+                windowSurface.blit(text1, textpos1)
     else:
         print("not font")
 
