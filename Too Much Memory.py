@@ -76,7 +76,7 @@ def main():
 
     while True:
         for event in pygame.event.get():
-            print(event)
+            #print(event)
             x, y = pygame.mouse.get_pos()
 
             if event.type == QUIT: #or (x > 650 and x < 755 and y > 650 and y < 700):
