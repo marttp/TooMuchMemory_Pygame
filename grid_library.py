@@ -25,7 +25,7 @@ class Grid():
         self.color_name_list = list()
         for i in range(24):
             self.color_name_list.append(
-                tuple((random.randrange(0, 255, 16), random.randrange(0, 255, 16), random.randrange(0, 255, 16))))
+                tuple((random.randrange(0, 255, 36), random.randrange(0, 255, 36), random.randrange(0, 255, 36))))
 
     def draw_lines(self, windowSurface,click):
         # if pygame.font:
