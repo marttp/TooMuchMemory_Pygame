@@ -5,7 +5,6 @@ from pygame.locals import *
 def main():
     clicked = 0
     click = 0
-    dual = 0
 
     class Square():
         def __init__(self, rect, color):
@@ -18,19 +17,9 @@ def main():
     pygame.font.init()
     pygame.display.set_caption("Too Much Memory")
     testrun = False
-    # GRIDSIZE = 16
-    #
-    # if GRIDSIZE == 4 or GRIDSIZE == 16:
-    #     pass
-    # else:
-    #     print("Grid must be size 4 or 16.")
-    #     print("Exiting program.  Fix the code.")99○(
-    #     exit()
 
-    # SCREENWIDTH = 720
     SCREENWIDTH = 800
     SCREENHEIGHT = 800
-    # SCREENHEIGHT = 1280
     SCREENSIZE = (SCREENWIDTH, SCREENHEIGHT)
 
     max_color_occurences = 2
