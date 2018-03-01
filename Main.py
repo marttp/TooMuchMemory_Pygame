@@ -1,21 +1,24 @@
-import pygame, sys
+import pygame, sys,time
 from pygame.locals import *
 
 pygame.init()
 pygame.font.init()
 pygame.display.set_caption("Too Much Memory")
-
 SCREENWIDTH = 800
 SCREENHEIGHT = 800
 SCREENSIZE = (SCREENWIDTH, SCREENHEIGHT)
 
 WHITE = (240, 240, 240)
+pygame.mixer.music.load('HarvestMoonTheme.wav')
+pygame.mixer.music.play(-1, 0.0)
+# print(pygame.mixer.music.get_volume())
+pygame.mixer.music.set_volume(0.55)
 
 windowSurface = pygame.display.set_mode(SCREENSIZE)
 
 while True:
     for event in pygame.event.get():
-        print(event)
+        #print(event)
         x, y = pygame.mouse.get_pos()
 
         if event.type == QUIT:  # or (x > 650 and x < 755 and y > 650 and y < 700):
@@ -23,6 +26,10 @@ while True:
             sys.exit()
 
         if event.type == MOUSEBUTTONDOWN:
+            soundObj = pygame.mixer.Sound('Click.wav')
+            soundObj.play()
+            time.sleep(1)
+            soundObj.stop()
 
             if 469 < x < 620 and 498 < y < 600:
                 pygame.quit()
@@ -49,5 +56,4 @@ while True:
     text2 = font2.render("Exit", 0, (255, 255, 255))
     textpos2 = text2.get_rect(x=520, y=535)
     windowSurface.blit(text2, textpos2)
-
     pygame.display.update()

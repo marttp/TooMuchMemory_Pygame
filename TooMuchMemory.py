@@ -1,4 +1,4 @@
-import pygame, sys, random, grid_library
+import pygame, sys, random, grid_library,time
 from pygame.locals import *
 
 
@@ -16,6 +16,10 @@ def main():
     pygame.init()
     pygame.font.init()
     pygame.display.set_caption("Too Much Memory")
+    pygame.mixer.music.load('Taezou.wav')
+    pygame.mixer.music.play(-1, 0.0)
+    # print(pygame.mixer.music.get_volume())
+    pygame.mixer.music.set_volume(0.30)
     testrun = False
 
     SCREENWIDTH = 800
@@ -121,9 +125,17 @@ def main():
                         if square.rect.collidepoint(x, y):
                             square.viewable_trigger = True
                 elif 650 < x < 755 and 650 < y < 700:
+                    soundObj = pygame.mixer.Sound('Click.wav')
+                    soundObj.play()
+                    time.sleep(1)
+                    soundObj.stop()
                     pygame.quit()
                     sys.exit()
                 elif 650 < x < 755 and 580 < y < 630:
+                    soundObj = pygame.mixer.Sound('Click.wav')
+                    soundObj.play()
+                    time.sleep(1)
+                    soundObj.stop()
                     pygame.quit()
                     return
 
